@@ -1,0 +1,5 @@
+# React Getting Started
+To use React in production, you need npm which is included with (Node.js.)
+
+React Directly in HTML
+The quickest way start learning React is to write React directly in your HTML files.
