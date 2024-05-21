@@ -7,7 +7,7 @@
 // Original car object
 let car = {
     brand: 'Toyota',
-    model: 'Camry',
+    model: 'Camy',
     year: 2020,
     start: function() {
       console.log('Engine started');
@@ -26,6 +26,9 @@ console.log(car); // Original car object remains unchanged
 console.log(car1.year); // Output: 2021
 
 
+console.log("");
+console.log("");
+console.log("");
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
@@ -52,10 +55,12 @@ newObj.age = '21';
 console.log(newObj.name); // Output: John
 console.log(myPrototype); // Output: { greet: [Function: greet] }
 console.log(newObj.age); // Output: { name: 'John' }
+newObj.greet(); // Output: Hello!
+console.log("");
+console.log("");
 
 
-// newObj.greet(); // Output: Hello!
-
+//---------------------------------------------------------------------------------------------------
 
 // Define a template for user data
 const userTemplate = {
@@ -64,7 +69,6 @@ const userTemplate = {
     id: 0,
     pass: ''
 };
-//---------------------------------------------------------------------------------------------------
 
 //mULTIPLE TYPE OBJECT 
 
@@ -90,5 +94,31 @@ console.log(user2);
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
 
-// *********************** OBJECT ***********************
+console.log("");
+console.log("");
 
+
+// *********************** CLASS ***********************
+
+// Classes: Classes are a blueprint for creating objects with similar properties and methods. They provide a way to define a new type of object.
+
+// Example of defining a class
+class Carc {
+  constructor(brand, model, year) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+  }
+
+  start() {
+    console.log('Engine startedddddddddddddddd');
+  }
+}
+
+// Creating objects using the class
+let myCar = new Carc('farari', 'Camry', 2090);
+console.log(myCar.brand); // Output: farari
+myCar.start(); // Output: Engine startedddddddddddddddd
+console.log(Carc); // Output: [class Carc]
+
+console.log("");
