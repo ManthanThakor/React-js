@@ -101,7 +101,7 @@ console.log("");
 // *********************** CLASS ***********************
 
 // Classes: Classes are a blueprint for creating objects with similar properties and methods. They provide a way to define a new type of object.
-// JavaScript Class Syntax
+//-- JavaScript Class Syntax
 // Use the keyword class to create a class.
 
 // Always add a method named constructor():
@@ -125,4 +125,5 @@ console.log(myCar.brand); // Output: farari
 myCar.start(); // Output: Engine startedddddddddddddddd
 console.log(Carc); // Output: [class Carc]
 
+console.log("");
 console.log("");
