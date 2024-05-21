@@ -1,0 +1,1 @@
+newObj.greet(); // Output: Hello!
