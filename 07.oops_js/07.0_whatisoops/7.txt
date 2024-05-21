@@ -1,0 +1,4 @@
+
+# what is oops in JavaScript?
+
+-In JavaScript, object-oriented programming (OOP) concepts are implemented using objects, classes, inheritance, encapsulation, and polymorphism. 
