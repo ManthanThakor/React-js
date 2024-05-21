@@ -29,19 +29,20 @@ animal.speak(); // Output: Generic Animal makes a sound.
 
 
 class Dog extends Animal {
-  constructor(name, breed) {
-    super(name); // Calls the constructor of the superclass (Animal)
-    this.breed = breed;
+    constructor(name, breed) {
+      super(name); // Calls the constructor of the superclass (Animal)
+      this.breed = breed;
+    }
+  
+    speak() {
+      console.log(`${this.name} barks.`);
+      console.log(`${this.breed} loyal.`);
+    }
   }
-
-  speak() {
-    console.log(`${this.name} barks.`);
-  }
-}
-
-let myDog = new Dog('Rex', 'German Shepherd');
-myDog.speak(); // Output: Rex barks.
-
+  
+  let myDog = new Dog('Rex', 'German Shepherd');
+  myDog.speak(); 
+  // Output: Rex barks, german Shepherd loyal.
 
 
 // In this example, the Dog class extends the Animal class, inheriting its properties and methods. The super keyword is used to call the constructor of the superclass (Animal) to initialize the name property.
