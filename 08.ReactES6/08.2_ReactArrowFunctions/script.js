@@ -34,6 +34,7 @@ hello = () => "Hello World!";
 // Arrow Function With Parameters:
 
 hello = (val) => "Hello " + val;
+
 //=============================================================================================
 
 // In fact, if you have only one parameter, you can skip the parentheses as well:
