@@ -68,3 +68,59 @@ function calculate(a, b) {
 }
 
 const [add, subtract, multiply, divide] = calculate(4, 7);
+
+//=============================================================================================
+//=============================================================================================
+
+// Destructuring Objects
+// Here is the old way of using an object inside a function:
+
+// Example
+// @@@@@@@@@@@@@@  Before:
+
+const vehicleOnee = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red'
+};
+myVehic(vehicleOnee);
+
+// Old way with logging the message to the console
+function myVehic(vehice) {
+  const messag = 'My ' + vehice.type + ' is a ' + vehice.color + ' ' + vehice.brand + ' ' + vehice.model + '.';
+  console.log(messag); // Log the message to the console
+}
+
+myVehic(vehicleOnee) // Output: My car is a red Ford Mustang.
+
+console.log();
+console.log();
+
+// Here is the new way of using an object inside a function:
+// Example
+// @@@@@@@@@@@@@@ With destructuring:
+
+const vehicleOne = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red'
+}
+
+myVehicleE(vehicleOne);
+
+function myVehicleE({type, color, brand, model}) {
+  const messagee = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+  return messagee; // Return the message from the function
+
+}
+
+myVehicleE(vehicleOne);// Output: My car is a red Ford Mustang.
+
+console.log();
+console.log();
+
+//=============================================================================================
