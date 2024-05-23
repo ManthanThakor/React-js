@@ -124,3 +124,30 @@ console.log();
 console.log();
 
 //=============================================================================================
+
+// Notice that the object properties do not have to be declared in a specific order.
+
+// We can even destructure deeply nested objects by referencing the nested object then using a colon and curly braces to again destructure the items needed from the nested object:
+
+// Example
+const ve = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red',
+  registration: {
+    city: 'Houston',
+    state: 'Texas',
+    country: 'USA'
+  }
+}
+
+myVeh(ve);
+
+function myVeh({ model, registration: { state } }) {
+  const messag = 'My ' + model + ' is registered in ' + state + '.';
+  return messag; // Return the message from the function
+
+}
+myVeh(ve);
