@@ -1,0 +1,18 @@
+nav, ul{
+    display: flex;
+}
+
+
+li{
+    list-style-type: none;
+    color: azure;
+}
+
+ul{
+    gap: 34px;
+}
+
+nav{
+    background-color: rgb(0, 0, 0);
+    padding: 23px;
+}
