@@ -1,0 +1,75 @@
+
+
+================================================================
+                      *** React JSX *** 
+================================================================
+
+# What is JSX?
+
+- JSX stands for JavaScript XML.
+- JSX allows us to write HTML in React.
+- JSX makes it easier to write and add HTML in React.
+
+Coding JSX
+
+- JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
+- JSX converts HTML tags into react elements.
+- You are not required to use JSX, but JSX makes it easier to write React applications.
+
+================================================================
+
+ex: 
+================================================================
+
+**** With JSX:
+
+const myElement = <h1>I Love JSX!</h1>;
+================================================================
+
+*** Without JSX:
+
+const myElement = React.createElement('h1', {}, 'I do not use JSX!');
+================================================================
+
+# Expressions in JSX
+
+- With JSX you can write expressions inside curly braces { }.
+- The expression can be a React variable, or property, or any other valid JavaScript expression. JSX will execute the expression and return the result:
+
+Example
+- Execute the expression 5 + 5:
+
+================================================================
+const myElement = <h1>React is {5 + 5} times better with JSX</h1>;
+================================================================
+
+# Inserting a Large Block of HTML
+
+- To write HTML on multiple lines, put the HTML inside parentheses:
+
+Example
+Create a list with three list items:
+
+const myElement = (
+  <ul>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Cherries</li>
+  </ul>
+);
+================================================================
+
+# One Top Level Element
+
+- The HTML code must be wrapped in ONE top level element.
+- So if you like to write two paragraphs, you must put them inside a parent element, like a div element.
+
+Example
+Wrap two paragraphs inside one DIV element:
+
+const myElement = (
+  <div>
+    <p>I am a paragraph.</p>
+    <p>I am a paragraph too.</p>
+  </div>
+);
