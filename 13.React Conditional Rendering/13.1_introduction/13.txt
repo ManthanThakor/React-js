@@ -1,0 +1,108 @@
+
+
+https://www.w3schools.com/react/react_conditional_rendering.asp 
+
+# React Conditional Rendering
+- In React, you can conditionally render components.
+- There are several ways to do this.
+
+1 Using if Statement
+You can use an if statement to decide what to render. This approach is useful when you have complex conditions or multiple conditions to check.
+
+jsx
+function ExampleComponent({ isLoggedIn }) {
+  if (isLoggedIn) {
+    return <h1>Welcome back!</h1>;
+  } else {
+    return <h1>Please sign up.</h1>;
+  }
+}
+
+2. Using Ternary Operator
+The ternary operator is a more concise way to handle simple conditional rendering.
+
+jsx
+function ExampleComponent({ isLoggedIn }) {
+  return (
+    <div>
+      {isLoggedIn ? <h1>Welcome back!</h1> : <h1>Please sign up.</h1>}
+    </div>
+  );
+}
+
+3. Using Logical AND (&&) Operator
+The logical AND operator is useful when you want to render something only if a condition is true.
+
+jsx
+function ExampleComponent({ isLoggedIn }) {
+  return (
+    <div>
+      {isLoggedIn && <h1>Welcome back!</h1>}
+    </div>
+  );
+}
+
+4. Using Immediately Invoked Function Expression (IIFE)
+For more complex conditions and JSX, you can use an IIFE to handle the conditional logic inside the render method.
+
+jsx
+function ExampleComponent({ isLoggedIn }) {
+  return (
+    <div>
+      {(() => {
+        if (isLoggedIn) {
+          return <h1>Welcome back!</h1>;
+        } else {
+          return <h1>Please sign up.</h1>;
+        }
+      })()}
+    </div>
+  );
+}
+
+5. Conditional Rendering with Switch Case
+When you have multiple conditions, a switch statement can be more readable.
+
+jsx
+function ExampleComponent({ status }) {
+  switch (status) {
+    case 'loading':
+      return <h1>Loading...</h1>;
+    case 'success':
+      return <h1>Data loaded successfully!</h1>;
+    case 'error':
+      return <h1>Error loading data.</h1>;
+    default:
+      return <h1>Unknown status.</h1>;
+  }
+}
+
+6. Using Render Props
+Render props can be used to handle conditional rendering, especially if you need to pass some props or data.
+
+jsx
+function ConditionalRenderer({ condition, renderTrue, renderFalse }) {
+  return condition ? renderTrue() : renderFalse();
+}
+
+function ExampleComponent({ isLoggedIn }) {
+  return (
+    <ConditionalRenderer
+      condition={isLoggedIn}
+      renderTrue={() => <h1>Welcome back!</h1>}
+      renderFalse={() => <h1>Please sign up.</h1>}
+    />
+  );
+}
+
+7. Inline Conditional Rendering
+For very simple conditions, inline conditional rendering can be a clean solution.
+
+jsx
+function ExampleComponent({ isLoggedIn }) {
+  return (
+    <div>
+      <h1>{isLoggedIn ? 'Welcome back!' : 'Please sign up.'}</h1>
+    </div>
+  );
+}
