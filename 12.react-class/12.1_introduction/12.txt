@@ -2,3 +2,120 @@
 
 
 $$$$$$$$$$$$$$$ React Class Components $$$$$$$$$$$$$$$
+
+- Before React 16.8, Class components were the only way to track state and lifecycle on a React component. Function components were considered "state-less".
+- With the addition of Hooks, Function components are now almost equivalent to Class components. The differences are so minor that you will probably never need to use a Class component in React.
+- Even though Function components are preferred, there are no current plans on removing Class components from React.
+- This section will give you an overview of how to use Class components in React.
+
+
+
+Creating a Class Component
+A class component is a JavaScript class that extends React.Component and implements a render method that returns JSX. Here's an example:
+
+jsx
+import React, { Component } from 'react';
+
+class MyComponent extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, World!</h1>
+        <p>This is a class component.</p>
+      </div>
+    );
+  }
+}
+
+export default MyComponent;
+State in Class Components
+Class components can have state, which is an object that determines how that component renders and behaves. State is initialized in the constructor and updated using setState.
+
+jsx
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={this.increment}>Increment</button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+Lifecycle Methods
+Class components have lifecycle methods that you can override to run code at particular times in the component's lifecycle. Some of the most common lifecycle methods are:
+
+componentDidMount(): Called once after the component is rendered for the first time.
+componentDidUpdate(prevProps, prevState): Called after the component updates.
+componentWillUnmount(): Called just before the component is destroyed.
+Here's an example:
+
+jsx
+import React, { Component } from 'react';
+
+class Timer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      seconds: 0
+    };
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState({ seconds: this.state.seconds + 1 });
+    }, 1000);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.seconds !== prevState.seconds) {
+      console.log(`Seconds updated: ${this.state.seconds}`);
+    }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    return (
+      <div>
+        <p>Seconds: {this.state.seconds}</p>
+      </div>
+    );
+  }
+}
+
+export default Timer;
+Props in Class Components
+Props are used to pass data from parent to child components. In class components, you can access props using this.props.
+
+jsx
+import React, { Component } from 'react';
+
+class Greeting extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, {this.props.name}!</h1>
+      </div>
+    );
+  }
+}
+
+export default Greeting;
