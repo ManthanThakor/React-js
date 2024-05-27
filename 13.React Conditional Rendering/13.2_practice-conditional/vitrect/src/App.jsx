@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div>
-      <h2>If Statement Component</h2>
+      <h2 >If Statement Component</h2>
       <IfStatementComponent isLoggedIn={isLoggedIn} />
 
       <h2>Ternary Operator Component</h2>
@@ -37,9 +37,8 @@ function App() {
       <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
         {isLoggedIn ? 'Logout' : 'Login'}
       </button>
-      <br></br><br></br>
-      <button onClick={() => setStatus('loading')}>Set Loading</button><br></br><br></br>
-      <button onClick={() => setStatus('success')}>Set Success</button><br></br><br></br>
+      <button onClick={() => setStatus('loading')}>Set Loading</button>
+      <button onClick={() => setStatus('success')}>Set Success</button>
       <button onClick={() => setStatus('error')}>Set Error</button><br></br><br></br><br></br><br></br><br></br><br></br>
     </div>
   );
