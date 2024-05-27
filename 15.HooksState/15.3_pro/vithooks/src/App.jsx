@@ -1,8 +1,12 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import FavoriteColor from '../components/hooks'
+import FavoriteColorr from '../components/readstate'
+import FavoriteColo from '../components/updatestate'
+import Car from '../components/holdstate'
+import Carr from '../components/singlehookobject'
+import C from '../components/updatearrayandobject'
 
 function App() {
   const [count, setCount] = useState(10)
@@ -16,6 +20,24 @@ function App() {
       <button onClick={()=>{setCountt(counttwo ** 2)}}>Update count two</button>
 
 <FavoriteColor/>
+<br></br>
+<hr></hr>
+<FavoriteColorr/>
+<br></br>
+<hr></hr>
+<FavoriteColo/>
+<br></br>
+<hr></hr>
+<Car/>
+<br></br>
+<hr></hr>
+<Carr/>
+<br></br>
+<hr></hr>
+<C/>
+<br></br>
+<hr></hr>
+
     </>
   )
 }
