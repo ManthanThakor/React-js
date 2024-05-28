@@ -17,13 +17,13 @@ const Navbar = ({ color }) => {
   }, [color])
 
   // Example of Cleanup function
-  useEffect(() => {
-    alert("Hey welcome to my page. This is the first render of app.jsx")
+//   useEffect(() => {
+//     alert("Hey welcome to my page. This is the first render of app.jsx")
 
-    return () => {
-      alert("component was unmounted")
-    }
-  }, [])
+//     return () => {
+//       alert("component was unmounted")
+//     }
+//   }, [])
 
   return (
     <div>
