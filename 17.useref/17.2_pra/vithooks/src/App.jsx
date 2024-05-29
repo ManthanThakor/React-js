@@ -49,6 +49,8 @@ import { useState, useEffect, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Accsess from '../components/accsesingdom'
+import Tracking from '../components/trackingstatechange'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -89,6 +91,14 @@ function App() {
       <button onClick={() => setCount2((count2) => count2 + 1)}>
         count is {count2}
       </button>
+      
+      <hr></hr>
+      <hr></hr>
+     <Accsess/>
+     <hr></hr>
+     <hr></hr>
+
+     <Tracking/>
     </>
   )
 }
