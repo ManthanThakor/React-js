@@ -5,3 +5,8 @@
 
 - Create React App doesn't include page routing.
 - React Router is the most popular solution.
+
+https://www.w3schools.com/react/react_router.asp - theory
+https://youtu.be/ZP8QyCIUeIA?si=MIRpLN49fN4o-rZ3 - video 
+
+
