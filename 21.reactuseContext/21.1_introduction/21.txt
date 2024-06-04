@@ -1,0 +1,20 @@
+
+
+
+React useContext Hook
+
+React Context
+- React Context is a way to manage state globally.
+
+- It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
+
+https://www.w3schools.com/react/react_usecontext.asp 
+
+
+https://youtu.be/jIbXtgL0qrg?si=Q5uZMwQp8QdXeOxC 
+
+
+App.jsx--|
+    Navbar.jsx--|  
+        Button.jsx--|
+            Component1.jsx
