@@ -12,7 +12,6 @@ function App() {
   return (
     <>
       <hr></hr>
-
       <h1>UseState</h1>
       <hr></hr>
       <UseState />
