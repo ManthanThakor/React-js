@@ -37,8 +37,8 @@ const Wrapper = styled.section`
   }
 
   h1 {
-    font-size: 5.4rem;
-    color: #2e86c1;
+    font-size: 5rem;
+    color: #2e86;
   }
 `;
 
