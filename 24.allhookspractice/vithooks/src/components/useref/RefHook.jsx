@@ -6,7 +6,7 @@ const RefHook = () => {
 
   const changeBorder = () => {
     inputRef.current.focus();
-    inputRef.current.style.backgroundColor = "#82E0AA";
+    inputRef.current.style.backgroundColor = "#82E";
   };
 
   return (
@@ -19,7 +19,6 @@ const RefHook = () => {
 };
 
 const Wrapper = styled.section`
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

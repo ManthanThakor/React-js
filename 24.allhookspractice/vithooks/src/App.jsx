@@ -7,6 +7,8 @@ import ClearUp from "./components/useeffect/ClearnUp";
 import UseEffect from "./components/useeffect/UseEffect";
 import Parent from "./Parent";
 import ReducerHook from "./components/usereducer/ReducerHook";
+import RefHook1 from "./components/useref/RefHook1";
+import RefHook from "./components/useref/RefHook";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -37,6 +39,11 @@ function App() {
       <h1> ReducerHook</h1>
       <hr></hr>
       <ReducerHook />
+      <hr></hr>
+      <h1> RefHook1</h1>
+      <hr></hr>
+      <RefHook1 />
+      <RefHook />
     </>
   );
 }
