@@ -5,9 +5,8 @@ import UseState from "./components/usestate/UseState";
 import UseStateObject from "./components/usestate/UseStateObject";
 import ClearUp from "./components/useeffect/ClearnUp";
 import UseEffect from "./components/useeffect/UseEffect";
-import { AppContext } from "./components/usecontext/userContext";
-import Child from "./Child";
 import Parent from "./Parent";
+import ReducerHook from "./components/usereducer/ReducerHook";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -35,8 +34,9 @@ function App() {
       <hr></hr>
       <Parent />
       <hr></hr>
-      <h1> usecontext</h1>
+      <h1> ReducerHook</h1>
       <hr></hr>
+      <ReducerHook />
     </>
   );
 }
