@@ -6,6 +6,8 @@ import UseStateObject from "./components/usestate/UseStateObject";
 import ClearUp from "./components/useeffect/ClearnUp";
 import UseEffect from "./components/useeffect/UseEffect";
 import { AppContext } from "./components/usecontext/userContext";
+import Child from "./Child";
+import Parent from "./Parent";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,7 +33,10 @@ function App() {
       <hr></hr>
       <h1> useContext</h1>
       <hr></hr>
-      {/* <AppContext /> */}
+      <Parent />
+      <hr></hr>
+      <h1> usecontext</h1>
+      <hr></hr>
     </>
   );
 }

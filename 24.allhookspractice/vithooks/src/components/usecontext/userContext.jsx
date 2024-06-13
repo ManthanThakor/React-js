@@ -4,8 +4,8 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const userData = {
-    name: "vinod",
-    age: 28,
+    name: "Manthan",
+    age: 21,
   };
 
   return <AppContext.Provider value={userData}>{children}</AppContext.Provider>;

@@ -12,12 +12,11 @@ const Parent = () => {
 };
 
 const Wrapper = styled.section`
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3.2rem;
+  gap: 1rem;
   font-size: 3.2rem;
 `;
 
