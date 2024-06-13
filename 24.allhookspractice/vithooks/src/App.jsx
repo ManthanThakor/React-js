@@ -11,6 +11,7 @@ import RefHook1 from "./components/useref/RefHook1";
 import RefHook from "./components/useref/RefHook";
 import LayoutEffect from "./components/uselayouteffect/LayoutEffect";
 import MemoHook from "./components/usememo/MemoHook";
+import Callbackhook from "./components/usecallback/CallbackHook";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -54,6 +55,10 @@ function App() {
       <h1>MemoHook</h1>
       <hr></hr>
       <MemoHook />
+      <hr></hr>
+      <h1>Callbackhook</h1>
+      <hr></hr>
+      <Callbackhook />
     </>
   );
 }
