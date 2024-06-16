@@ -28,7 +28,7 @@ const Callbackhook = () => {
           width: "80%", // width of the horizontal rule
           borderRadius: "5px", // rounded corners
         }}
-      />{" "}
+      />
       <div>
         Count: {count}
         <button onClick={increment}>+</button>
