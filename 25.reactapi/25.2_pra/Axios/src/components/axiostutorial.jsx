@@ -1,7 +1,8 @@
 
-import React from 'react'
-
+import React, { useEffect } from 'react';
+import axios from 'axios';
 function Axiostutorial() {
+    
     useEffect(() => {
         axios.get("https://jsonplaceholder.typicode.com/users")
         .then((response) => {
