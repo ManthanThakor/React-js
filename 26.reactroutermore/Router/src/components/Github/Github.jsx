@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import React from 'react';
+import { useQuery } from 'react-query';
 import axios from 'axios';
 
+const fetchProfile = async (username) => {
+  const response = await axios.get(`https://api.github.com/users/ManthanThakor`);
+  return response.data;
+};
+
 const GitHubProfile = ({ username }) => {
-  const [profile, setProfile] = useState(null);
+  const { data: profile, error, isLoading } = useQuery(['githubProfile', username], () => fetchProfile(username), {
+    staleTime: 1000 * 60 * 5, // 5 minutes
+    cacheTime: 1000 * 60 * 10, // 10 minutes
+  });
 
-  useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const response = await axios.get(`https://api.github.com/users/ManthanThakor`);
-        setProfile(response.data);
-      } catch (error) {
-        console.error('Error fetching GitHub profile:', error);
-      }
-    };
-
-    fetchProfile();
-  }, [username]);
-
-  if (!profile) {
+  if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error fetching GitHub profile: {error.message}</div>;
   }
 
   return (
