@@ -1,33 +1,24 @@
-// components/ProductList.js
 import React from 'react';
 import ProductCard from './ProductCard';
-import { useInfiniteQuery } from '@tanstack/react-query';
-import axios from 'axios';
-
-const fetchProducts = async ({ pageParam = 1 }) => {
-  const { data } = await axios.get(`https://jsonplaceholder.typicode.com/photos?_page=${pageParam}`);
-  return data;
-};
-
-const useProducts = () => {
-  return useInfiniteQuery({
-    queryKey: ['products'],
-    queryFn: fetchProducts,
-    getNextPageParam: (lastPage, pages) => lastPage.length > 0 ? lastPage[lastPage.length - 1].id : false,
-  });
-};
+import useProducts from '../hooks/useProducts';
 
 const ProductList = () => {
-  const { data, fetchNextPage, hasNextPage } = useProducts();
+  const { data, fetchNextPage, hasNextPage, isLoading, isError, error } = useProducts();
 
-  if (!data) return null; // Handle initial loading state
+  if (isLoading) {
+    return <p>Loading products...</p>;
+  }
+
+  if (isError) {
+    return <p>Error loading products: {error.message}</p>;
+  }
 
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {data.pages?.map((page, index) => (
+        {data?.pages.map((page, index) => (
           <React.Fragment key={index}>
-            {page.map(product => (
+            {page.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </React.Fragment>

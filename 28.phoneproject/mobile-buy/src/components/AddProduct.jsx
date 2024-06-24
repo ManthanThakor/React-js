@@ -3,15 +3,14 @@ import React, { useState } from 'react';
 import useAddProduct from '../hooks/useAddProduct';
 
 const AddProduct = () => {
-  const mutation = useAddProduct();
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
+  const mutation = useAddProduct();
 
   const handleAddProduct = async () => {
     try {
-      await mutation.mutateAsync({ name, price, image }); // Use mutateAsync to await the mutation
-      // Clear form fields after successful addition
+      await mutation.mutateAsync({ name, price, image });
       setName('');
       setPrice('');
       setImage('');
@@ -47,10 +46,10 @@ const AddProduct = () => {
       <button
         onClick={handleAddProduct}
         className="bg-blue-500 text-white py-2 px-4 rounded"
+        disabled={mutation.isLoading || !name.trim() || !price.trim() || !image.trim()}
       >
-        Add Product
+        {mutation.isLoading ? 'Adding product...' : 'Add Product'}
       </button>
-      {mutation.isLoading && <p>Adding product...</p>}
       {mutation.isError && <p>Error: {mutation.error.message}</p>}
       {mutation.isSuccess && <p>Product added successfully!</p>}
     </div>
