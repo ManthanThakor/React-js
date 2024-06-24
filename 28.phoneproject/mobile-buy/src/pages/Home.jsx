@@ -1,31 +1,18 @@
-import React, { useState } from 'react';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import ProductCard from '../components/ProductCard';
-import Pagination from '../components/Pagination';
-
-const fetchProducts = async (page) => {
-  const { data } = await axios.get(`https://api.example.com/products?page=${page}`);
-  return data;
-};
+import React from 'react';
+import useProducts from '../hooks/useProducts';
+import ProductList from '../components/ProductList';
+import AddProduct from '../components/AddProduct';
 
 const Home = () => {
-  const [page, setPage] = useState(1);
-  const { data, error, isLoading } = useQuery(['products', page], () => fetchProducts(page), {
-    keepPreviousData: true,
-  });
+  const { data, error, isLoading, fetchNextPage, hasNextPage } = useProducts();
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className="container mx-auto p-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {data.products.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-      <Pagination page={page} setPage={setPage} hasMore={data.hasMore} />
+      <AddProduct />
+      <ProductList data={data} fetchNextPage={fetchNextPage} hasNextPage={hasNextPage} />
     </div>
   );
 };
